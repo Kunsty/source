@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <form>
+      <input type="number" name="diem-kiem-tra" id="diem-kiem-tra" placeholder="Diem kiem tra"><br><br>
+      <input type="number" name="diem-giua-ky" id="diem-giua-ky" placeholder="Diem giua ky"><br><br>
+      <input type="number" name="diem-cuoi-ky" id="diem-cuoi-ky" placeholder="Diem cuoi ky"><br><br>
+
+      <input type="button" value="Tinh diem trung binh" onclick="tinhDiem()">
+    </form>
+    <p id="kqua"></p>
+    <script type="text/javascript">
+      function tinhDiem() {
+      var diemKiemTra = parseFloat(document.getElementById("diem-kiem-tra").value);
+      var diemGiuaKy = parseFloat(document.getElementById("diem-giua-ky").value);
+      var diemCuoiKy = parseFloat(document.getElementById("diem-cuoi-ky").value);
+
+      var diemTB = (diemKiemTra + diemCuoiKy + diemGiuaKy) / 3;
+
+      var hang = "";
+      if (diemTB >= 8) {
+        hang = "Gioi";
+      }else if (diemTB >= 6) {
+        hang = "Kha";
+      }else if (diemTb >= 5) {
+        hang = "Tbinh";
+      }else{
+        hang = "Yeu";
+      }
+      document.getElementById("kqua").innerHTML = "Diem trung binh cua hoc sinh la: " + diemTB.toFixed(1) + "<br>Hang cua hoc sinh la " + hang;
+      }
+      
+    </script>
+</body>
+</html>

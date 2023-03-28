@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <form>
+      <input type="number" name="so-phut" id="so_phut" placeholder="So phut goi"><br><br>
+      <input type="number" name="so-tin-nhan" id="so_tin_nhan" placeholder="so tin nhan"><br><br>
+      <input type="number" name="du-lieu" id="du_lieu" placeholder="du lieu su dung"><br><br>
+
+      <input type="button" value="Tinh Cuoc" onclick="tinhCuoc()">
+    </form>
+    <p id="kqua"></p>
+    <script type="text/javascript">
+      function tinhCuoc() {
+        const gia_phut = 100;
+        const gia_tin_nhan = 500;
+        const gia_du_lieu = 20000;
+
+        const so_phut = parseInt(document.getElementById("so_phut").value);
+        const so_tin_nhan = parseInt(document.getElementById("so_tin_nhan").value);
+        const du_lieu = parseInt(document.getElementById("du_lieu").value);
+
+        const cuoc_goi = so_phut * gia_phut;
+        const cuoc_tin_nhan = so_tin_nhan * gia_tin_nhan;
+        const cuoc_du_lieu = du_lieu * gia_du_lieu;
+        const tong_cuoc = cuoc_goi + cuoc_tin_nhan + cuoc_du_lieu;
+        document.getElementById("kqua").innerHTML = "Tong cuoc" + tong_cuoc + "VND";
+      }
+    </script>
+</body>
+</html>
