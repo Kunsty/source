@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        function tinhSoNgay() {
+            var thang = document.getElementById("thang").value;
+            var nam = document.getElementById("nam").value;
+            var soNgayTrongThang;
+
+            switch(thang) {
+                case "1":
+                case "3":
+                case "5":
+                case "7":
+                case "8":
+                case "10":
+                case "12":
+                    soNgayTrongThang = 31;
+                    break;
+                case "4":
+                case "6":
+                case "9":
+                case "11":
+                    soNgayTrongThang = 30;
+                    break;
+                case "2":
+                    if ((nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0) {
+                        soNgayTrongThang = 29;
+                    }else{
+                        soNgayTrongThang = 28;
+                    }
+                    break;
+                default:
+                    soNgayTrongThang = 0;
+                    break;
+            }
+            document.getElementById("kq").innerHTML = "Tháng " + thang + " năm " + nam + " có " + soNgayTrongThang + " ngày.";
+        }
+
+    </script>
+    </head>
+    <body>
+    <label for="thang">Tháng:</label>
+    <input type="number" id="thang" name="thang" min="1" max="12">
+    <label for="nam">Năm:</label>
+    <input type="number" id="nam" name="nam" min="1">
+    <button onclick="tinhSoNgay()">Tính</button>
+    <p id="kq"></p>
+    </body>
+</html

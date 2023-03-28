@@ -1,0 +1,13 @@
+begin 
+	input point
+	if point => 75
+	display "loai A"
+	else point >= 60
+	diplay "loai B"
+	else point >= 45
+	display "loai C"
+	else point >= 35
+	display "loai D"
+	else 
+	display "loai E"
+End

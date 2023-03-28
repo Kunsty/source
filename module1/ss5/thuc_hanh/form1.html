@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hobby</title>
+    </head>
+    <style type="text/css">
+        .text{
+            color: blue;
+        }
+        .input {
+            position: relative;
+            left: 24px; /* giá trị của left có thể thay đổi tùy theo vị trí cần di chuyển */
+        }
+        .hobby{
+            color: red;
+        }
+
+    </style>
+    <body>
+        <form method="post" action="">
+            <h1 style="border: 1px solid red; background-color: red; color: white;">Sở thích của bạn</h1>
+            <p class="text">Họ và tên:
+            <input type="text" name="yourname"> </p>
+            <p class="text">Email:
+            <input type="text" name="email" class="input"> </p>
+            <p class="text">Sở thích</p>
+           <p class="hobby" > <input type="checkbox" name="hobby" class="hobby"> Thể thao 
+            <input type="checkbox" name="hobby" class="hobby"> Âm nhạc
+            <input type="checkbox" name="hobby" class="hobby"> Đọc sách<br>
+            <input type="checkbox" name="hobby" class="hobby"> Lướt web
+            <input type="checkbox" name="hobby" class="hobby"> Chơi game
+            <input type="checkbox" name="hobby" class="hobby"> Điện ảnh <br>
+            <input type="checkbox" name="hobby" class="hobby"> Du Lịch 
+            </p>
+            <p><input type="submit" name="" value="Gửi thông tin">
+            <input type="reset" name="" value="Nhập lại"></p>
+        </form>
+    </body>
+</html>

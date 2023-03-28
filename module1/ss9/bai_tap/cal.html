@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <style>
+      ##calculator {
+  width: 240px;
+  height: 240px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+#result {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  font-size: 24px;
+  text-align: right;
+  padding-right: 5px;
+  border: none;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #eee;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="calculator">
+      <input type="text" id="result" disabled><br>
+      <button onclick="appendToResult('7')">7</button>
+      <button onclick="appendToResult('8')">8</button>
+      <button onclick="appendToResult('9')">9</button>
+      <button onclick="clearResult()">C</button><br>
+      <button onclick="appendToResult('4')">4</button>
+      <button onclick="appendToResult('5')">5</button>
+      <button onclick="appendToResult('6')">6</button>
+      <button onclick="appendToResult('/')">/</button><br>
+      <button onclick="appendToResult('1')">1</button>
+      <button onclick="appendToResult('2')">2</button>
+      <button onclick="appendToResult('3')">3</button>
+      <button onclick="appendToResult('*')">*</button><br>
+      <button onclick="appendToResult('0')">0</button>
+      <button onclick="appendToResult('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="appendToResult('-')">-</button><br>
+      <button onclick="appendToResult('+')">+</button>
+    </div>
+    <script>
+      function appendToResult(value) {
+        var resultElement = document.getElementById("result");
+        resultElement.value += value;
+      }
+      
+      function clearResult() {
+        var resultElement = document.getElementById("result");
+        resultElement.value = "";
+      }
+      
+      function calculate() {
+        var resultElement = document.getElementById("result");
+        var result = eval(resultElement.value);
+        resultElement.value = result;
+      }
+      
+      // Bắt sự kiện nhập từ bàn phím
+      document.addEventListener("keydown", function(event) {
+        var key = event.key;
+        if (key >= "0" && key <= "9" || key == "." || key == "+" || key == "-" || key == "*" || key == "/") {
+          appendToResult(key);
+        } else if (key == "Enter") {
+          calculate();
+        } else if (key == "Backspace") {
+          var resultElement = document.getElementById("result");
+          resultElement.value = resultElement.value.slice(0, -1);
+        }
+      });
+    </script>
+  </body>
+</html>

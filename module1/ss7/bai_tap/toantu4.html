@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chuyen tien</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Amout</th>
+			<th>From Currency</th>
+			<th>To Currency</th>
+		</tr>
+		<tr>
+			<form>
+				<td>
+					<input type="number" name="amountVN" id="amountVN">
+				</td>
+				<td>
+					<select id="currency">
+						<option value="vnd">VietNam</option>
+						<option value="usd">USA</option>
+					</select>
+				</td>
+				<td>
+					
+						<select >
+							<option >USD</option>
+							<option >VND</option>
+						</select>
+					
+				</td>
+				<td>
+					<input type="button" value="Convert" onclick="convert()">
+				</td>
+			</form>
+		</tr>
+		<tr>
+
+			<td><p id="kq">result</p></td>
+
+		</tr>
+	</table>
+	
+	
+	<script type="text/javascript">
+		function convert() {
+			var amountV = document.getElementById("amountVN").value;
+			var currency = document.getElementById("currency").value;
+			var kq = document.getElementById("kq");
+			if (currency === "vnd") {
+				 kq.innerHTML = amountV + " VND = " + amountV/23000 + " USD";
+			} else if (currency === "usd") {
+				 kq.innerHTML = amountV + " USD = " + amountV*23000 + " VND";
+			}
+			
+		}
+		
+	</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+	<h1>Chuyển đổi tiền tệ</h1>
+	<p>Nhập số tiền cần chuyển đổi:</p>
+	<input type="text" id="amount">
+	<br>
+	<p>Chọn loại tiền tệ:</p>
+	<select id="currency">
+		<option value="vnd">VND</option>
+		<option value="usd">USD</option>
+	</select>
+	<br>
+	<button onclick="convert()">Chuyển đổi</button>
+	<br>
+	<p>Kết quả:</p>
+	<p id="result"></p>
+
+	<script>
+		function convert() {
+			var amount = document.getElementById("amount").value;
+			var currency = document.getElementById("currency").value;
+			var result = document.getElementById("result");
+
+			if (currency === "vnd") {
+				result.innerHTML = amount + " VND = " + amount/23000 + " USD";
+			} else if (currency === "usd") {
+				result.innerHTML = amount + " USD = " + amount*23000 + " VND";
+			}
+		}
+	</script>
+</body>
+</html>
+ -->

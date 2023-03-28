@@ -1,0 +1,8 @@
+
+begin 
+	input toan
+	input ly 
+	input hoa
+	a = (toan + ly + hoa)/3
+	display a
+end

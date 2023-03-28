@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Do You Love Me?</title>
+    <style type="text/css">
+    .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do You Love Me?</h1>
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+  <script>
+    const yesBtn = document.getElementById('yes-btn');
+    const noBtn = document.getElementById('no-btn');
+
+// Handle click event for Yes button
+yesBtn.addEventListener('click', () => {
+    alert('<3');
+});
+
+// Handle mouseover event for No button
+    noBtn.addEventListener('mouseover', () => {
+    // Move No button to a random position
+    noBtn.style.position = 'absolute';
+    const x = Math.floor(Math.random() * window.innerWidth);
+    const y = Math.floor(Math.random() * window.innerHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
+
+// Disable No button after it has been moved
+noBtn.addEventListener('click', () => {
+    noBtn.disabled = true;
+});
+
+  </script>
+</body>
+</html>
