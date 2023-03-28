@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tính lãi ngân hàng</title>
+</head>
+<body>
+	<h1>Tính lãi ngân hàng</h1>
+	<form>
+		<label for="initial-amount">Số tiền ban đầu:</label>
+		<input type="number" id="initial-amount" name="initial-amount" required>
+		<label for="loan-term">Số tháng cho vay:</label>
+		<input type="number" id="loan-term" name="loan-term" required>
+		<label for="interest-rate">Lãi xuất hàng tháng (%):</label>
+		<input type="number" id="interest-rate" name="interest-rate" required>
+		<button type="button" onclick="calculateInterest()">Tính toán</button>
+	</form>
+	<div id="result"></div>
+
+	<script>
+		function calculateInterest() {
+			var initialAmount = parseFloat(document.getElementById("initial-amount").value);
+			var loanTerm = parseInt(document.getElementById("loan-term").value);
+			var interestRate = parseFloat(document.getElementById("interest-rate").value);
+
+			var totalInterest = 0;
+			var remainingAmount = initialAmount;
+			for (var i = 0; i < loanTerm; i++) {
+				var monthlyInterest = 0;
+				if (interestRate < 0.5) {
+					monthlyInterest = remainingAmount * 0.3 / 100;
+				} else if (interestRate < 1) {
+					monthlyInterest = remainingAmount * 0.4 / 100;
+				} else if (interestRate < 1.5) {
+					monthlyInterest = remainingAmount * 0.5 / 100;
+				} else if (interestRate < 2) {
+					monthlyInterest = remainingAmount * 0.6 / 100;
+				} else {
+					monthlyInterest = remainingAmount * 0.7 / 100;
+				}
+				totalInterest += monthlyInterest;
+				remainingAmount += monthlyInterest;
+			}
+
+			document.getElementById("result").innerHTML = "Tổng số tiền lãi nhận được sau " + loanTerm + " tháng là: " + totalInterest.toFixed(2) + " đồng.";
+		}
+	</script>
+</body>
+</html>

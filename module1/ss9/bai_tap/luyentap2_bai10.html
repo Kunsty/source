@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tính giá điện</title>
+</head>
+<body>
+	<input type="text" id="inputElectricity">
+	<button onclick="calculateElectricity()">Tính</button>
+	<p id="result"></p>
+
+	<script>
+		function calculateElectricity() {
+			var electricity = parseFloat(document.getElementById("inputElectricity").value);
+			var price = 0;
+
+			if (electricity <= 50) {
+				price = electricity * 1678;
+			} else if (electricity <= 100) {
+				price = 50 * 1678 + (electricity - 50) * 1734;
+			} else if (electricity <= 200) {
+				price = 50 * 1678 + 50 * 1734 + (electricity - 100) * 2014;
+			} else if (electricity <= 300) {
+				price = 50 * 1678 + 50 * 1734 + 100 * 2014 + (electricity - 200) * 2536;
+			} else if (electricity <= 400) {
+				price = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (electricity - 300) * 2834;
+			} else {
+				price = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (electricity - 400) * 2927;
+			}
+
+			document.getElementById("result").innerHTML = "Giá điện: " + price.toFixed(0) + " đồng";
+		}
+	</script>
+</body>
+</html>
