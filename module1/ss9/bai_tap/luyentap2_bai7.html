@@ -16,7 +16,9 @@
       var c = document.getElementById("c").value;
       var delta = b*b - 4*a*c;
       var x1, x2;
-      if (delta < 0) {
+      if (a == 0) {
+        document.getElementById("kqua").innerHTML = "PT vo nghiem";
+      }else if (delta < 0) {
         document.getElementById("kqua").innerHTML = "PT vo nghiem";
       }else if (delta == 0) {
         x1 = x2 = -b / (2*a);
