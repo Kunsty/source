@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<label for="principal">Số tiền ban đầu:</label>
+		<input type="number" id="principal" name="principal" required><br>
+
+		<label for="months">Số tháng cho vay:</label>
+		<input type="number" id="months" name="months" required><br>
+
+		<label for="interestRate">Lãi xuất hàng tháng:</label>
+		<input type="number" id="interestRate" name="interestRate" step="0.01" required><br>
+
+		<input type="button" value="Tính toán" onclick="calculateInterest()">
+	</form>
+
+	<p id="result"></p>
+
+	<script>
+		function calculateInterest() {
+			
+			var principal = parseFloat(document.getElementById("principal").value);
+			var months = parseInt(document.getElementById("months").value);
+			var interestRate = parseFloat(document.getElementById("interestRate").value);
+
+			
+			var interest = principal * (interestRate / 100) * months;
+
+			
+			var resultElement = document.getElementById("result");
+			resultElement.innerHTML = "Số tiền lãi phát sinh là: " + interest.toFixed(2);
+		}
+	</script>
+</body>
+</html>

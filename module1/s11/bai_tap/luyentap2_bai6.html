@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<pre>
+		<code>
+			<script>
+				var size = 20;
+
+				for (var row = 0; row < size / 2; row++) {
+				  var line = '';
+				  for (var col = 0; col < size; col++) {
+				    if (
+				      (col < size / 4 - row) ||
+				      (col > size * 3 / 4 + row) ||
+				      (col > size / 4 + row && col < size * 3 / 4 - row)
+				    ) {
+				      line += ' ';
+				    } else {
+				      line += '*';
+				    }
+				  }
+				  document.write(line + '\n');
+				}
+
+				for (var row = size / 2; row < size; row++) {
+				  var line = '';
+				  for (var col = 0; col < size; col++) {
+				    if (
+				      (col < row - size / 2) ||
+				      (col >= size - (row - size / 2))
+				    ) {
+				      line += ' ';
+				    } else {
+				      line += '*';
+				    }
+				  }
+				  document.write(line + '\n');
+				}
+			</script>
+		</code>
+	</pre>
+</body>
+</html>

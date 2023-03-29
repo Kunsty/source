@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table id="table" border="1px">Bảng cửu chương</table>
+    </body>
+    <script type="text/javascript">
+        var table = document.getElementById("table");
+        for(var i = 0; i <= 9; i++){
+            var row = document.createElement("tr");
+            for(var j = 0; j <= 9; j++){
+                var cell = document.createElement("td");
+                cell.textContent = i + "x" + j + "=" + (i*j);
+                row.appendChild(cell);
+            }
+        table.appendChild(row);
+
+        }
+    </script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tam giác vuông</title>
+</head>
+<body>
+	<h1>Tam giác vuông</h1>
+
+	<h2>Góc vuông ở trên cùng bên trái</h2>
+		
+			<script>
+				var size = 5;
+				var triangle = '';
+
+				for (var i = 0; i < size; i++) {
+					for (var j = 0; j <= i; j++) {
+						triangle += '*';
+					}
+					triangle += '\n';
+				}
+
+				document.write('<pre>' + triangle + '</pre>');
+			</script>
+		
+
+	<h2>Góc vuông ở trên cùng bên phải</h2>
+	
+			<script>
+				var size = 5;
+				var triangle = '';
+
+				for (var i = 0; i < size; i++) {
+					for (var j = 0; j < size; j++) {
+						if (j >= size - i - 1) {
+							triangle += '*';
+						} else {
+							triangle += ' ';
+						}
+					}
+					triangle += '\n';
+				}
+
+				document.write('<pre>' + triangle + '</pre>');
+			</script>
+		
+
+	<h2>Góc vuông ở dưới cùng bên trái</h2>
+	
+			<script>
+				var size = 5;
+				var triangle = '';
+
+				for (var i = 0; i < size; i++) {
+					for (var j = 0; j < size; j++) {
+						if (j <= i) {
+							triangle += '*';
+						} else {
+							triangle += ' ';
+						}
+					}
+					triangle += '\n';
+				}
+
+				document.write('<pre>' + triangle + '</pre>');
+			</script>
+	
+
+	<h2>Góc vuông ở dưới cùng bên phải</h2>
+	
+			<script>
+				var size = 5;
+				var triangle = '';
+
+				for (var i = 0; i < size; i++) {
+					for (var j = 0; j < size; j++) {
+						if (j >= i) {
+							triangle += '*';
+						} else {
+							triangle += ' ';
+						}
+					}
+					triangle += '\n';
+				}
+
+				document.write('<pre>' + triangle + '</pre>');
+			</script>
+	
+</body>
+</html>

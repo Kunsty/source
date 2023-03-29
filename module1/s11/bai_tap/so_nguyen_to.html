@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hiển thị 20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+	<input type="number" id="num" placeholder="Nhập số lượng số nguyên tố cần hiển thị">
+	<button onclick="displayPrimes()">Hiển thị</button>
+	<div id="primes"></div>
+	<script>
+		function displayPrimes() {
+			var num = document.getElementById("num").value;
+			var count = 0;
+			var n = 2;
+			var primes = "";
+			while (count < num) {
+				if (isPrime(n)) {
+					primes += n + " ";
+					count++;
+				}
+				n++;
+			}
+			document.getElementById("primes").innerHTML = primes;
+		}
+
+		function isPrime(num) {
+			if (num < 2) {
+				return false;
+			}
+			for (var i = 2; i < num; i++) {
+				if (num % i === 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>

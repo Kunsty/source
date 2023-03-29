@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div id="rectangleDiv"></div>
+
+	<script>
+		var rectangleDiv = document.getElementById("rectangleDiv");
+		var width = 50;
+		var height = 10;
+		var rectangle = "";
+
+		for (var i = 0; i < height; i++) {
+			for (var j = 0; j < width; j++) {
+				rectangle += "*";
+			}
+			rectangle += "<br>";
+		}
+
+		rectangleDiv.innerHTML = rectangle;
+	</script>
+</body>
+</html>
