@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đếm số nguyên âm trong chuỗi</title>
+</head>
+<body>
+  <h1>Đếm số nguyên âm trong chuỗi</h1>
+
+  <div>
+    Nhập chuỗi cần đếm số nguyên âm: <input type="text" id="inputString">
+    <button onclick="countVowels()">Đếm</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function countVowels() {
+      // Lấy giá trị đầu vào từ input
+      let input = document.getElementById('inputString').value;
+      // Chuyển đổi chuỗi thành chữ thường để dễ đối chiếu
+      let lowercaseStr = input.toLowerCase();
+      // Khởi tạo biến đếm số nguyên âm
+      let count = 0;
+      // Duyệt qua từng ký tự trong chuỗi
+      for (let i = 0; i < lowercaseStr.length; i++) {
+        // Nếu ký tự là nguyên âm, tăng biến đếm lên 1
+        if (lowercaseStr[i] === 'a' || lowercaseStr[i] === 'e' || lowercaseStr[i] === 'i' || lowercaseStr[i] === 'o' || lowercaseStr[i] === 'u') {
+          count++;
+        }
+      }
+      // Hiển thị kết quả
+      let resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `<p>Số nguyên âm trong chuỗi "${input}" là: ${count}</p>`;
+    }
+  </script>
+</body>
+</html>

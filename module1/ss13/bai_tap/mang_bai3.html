@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chuyển đổi chữ thường thành chữ hoa</title>
+</head>
+<body>
+  <input type="text" id="stringInput" placeholder="Nhập chuỗi vào đây">
+  <button onclick="chuyenChuThuongThanhChuHoa()">Chuyển đổi chữ thường thành chữ hoa</button>
+  <br>
+  <span id="result"></span>
+
+  <script>
+    function chuyenChuThuongThanhChuHoa() {
+      let string = document.getElementById('stringInput').value;
+
+      // Chuyển đổi các ký tự chữ thường thành chữ hoa
+      let result = '';
+      for (let i = 0; i < string.length; i++) {
+        let char = string.charAt(i);
+        if (char === char.toLowerCase()) {
+          result += char.toUpperCase();
+        } else {
+          result += char.toLowerCase();
+        }
+      }
+
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</body>
+</html>

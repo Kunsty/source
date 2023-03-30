@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đảo ngược mảng số nguyên</title>
+</head>
+<body>
+  <h1>Đảo ngược mảng số nguyên</h1>
+
+  <div>
+    Nhập các phần tử của mảng, cách nhau bằng dấu phẩy: <input type="text" id="inputArray">
+    <button onclick="reverseArray()">Đảo ngược</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function reverseArray() {
+      let input = document.getElementById('inputArray').value;
+      let arr = input.split(',');
+      arr.reverse();
+      document.getElementById("result").innerHTML = "mang sau khi dao nguoc " + arr;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Từ điển Anh-Việt</title>
+</head>
+<body>
+  <h1>Từ điển Anh-Việt</h1>
+
+  <input type="text" id="searchInput" placeholder="Nhập từ cần tra vào đây">
+  <button onclick="timKiem()">Tìm kiếm</button>
+
+  <div id="result"></div>
+
+  <script>
+    // Khai báo mảng chứa các từ trong từ điển
+    let tuDien = [
+      { tu: 'hello', nghia: 'xin chào' },
+      { tu: 'world', nghia: 'thế giới' },
+      { tu: 'cat', nghia: 'con mèo' },
+      { tu: 'dog', nghia: 'con chó' },
+      { tu: 'apple', nghia: 'quả táo' },
+      { tu: 'banana', nghia: 'quả chuối' },
+      { tu: 'computer', nghia: 'máy tính' },
+      { tu: 'phone', nghia: 'điện thoại' },
+      { tu: 'book', nghia: 'sách' },
+      { tu: 'table', nghia: 'bàn' }
+    ];
+
+    function timKiem() {
+      let searchValue = document.getElementById('searchInput').value.toLowerCase();
+      let resultDiv = document.getElementById('result');
+      let resultHTML = '';
+
+      // Duyệt qua từ điển để tìm kiếm từ cần tra
+      for (let i = 0; i < tuDien.length; i++) {
+        let currentWord = tuDien[i];
+
+        // Nếu từ cần tra được tìm thấy
+        if (currentWord.tu === searchValue) {
+          resultHTML = `<p><strong>${currentWord.tu}</strong>: ${currentWord.nghia}</p>`;
+          break;
+        }
+      }
+
+      // Nếu không tìm thấy từ cần tra
+      if (resultHTML === '') {
+        resultHTML = '<p>Không tìm thấy từ cần tra.</p>';
+      }
+
+      resultDiv.innerHTML = resultHTML;
+    }
+  </script>
+</body>
+</html>

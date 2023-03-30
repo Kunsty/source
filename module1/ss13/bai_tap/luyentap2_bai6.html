@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	let input = prompt("Nhập vào một mảng ký tự, các phần tử cách nhau bằng dấu phẩy: ");
+	let arr = input.split(",");
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] === '-') {
+			arr[i] = '_';
+		}
+	}
+	document.write("Mảng sau khi thay thế: " + arr);
+</script>
+</html>

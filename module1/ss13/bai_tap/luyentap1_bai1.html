@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tính số lượng số nguyên lớn hơn hoặc bằng 10</title>
+</head>
+<body>
+  <h1>Tính số lượng số nguyên lớn hơn hoặc bằng 10</h1>
+
+  <div id="result"></div>
+
+  <script>
+    let arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] >= 10) {
+        count++;
+      }
+    }
+    let result = document.getElementById("result");
+    result.innerHTML = "So luong so nguyen lon hon hoac bang 10 la: " + count;
+  </script>
+</body>
+</html>

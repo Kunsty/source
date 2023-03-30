@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chèn dấu '-' giữa 2 số chẵn</title>
+</head>
+<body>
+  <input type="text" id="numberInput" placeholder="Nhập số vào đây">
+  <button onclick="chenDauTrongSoChan()">Chèn dấu '-' giữa 2 số chẵn</button>
+  <br>
+  <span id="result"></span>
+  
+  <script>
+    function chenDauTrongSoChan() {
+      let number = document.getElementById('numberInput').value;
+
+      // Chuyển số nhập vào thành một mảng các chữ số
+      let digits = number.toString().split('');
+
+      // Biến lưu trữ kết quả
+      let result = '';
+
+      // Vòng lặp để chèn dấu '-' giữa các số chẵn
+      for (let i = 0; i < digits.length; i++) {
+        let currentDigit = digits[i];
+
+        // Kiểm tra nếu số hiện tại là số chẵn
+        if (currentDigit % 2 === 0) {
+          // Nếu trước đó đã có ít nhất một số chẵn được thêm vào kết quả
+          if (result !== '') {
+            let lastDigit = result[result.length - 1];
+
+            // Kiểm tra nếu số trước đó cũng là số chẵn
+            if (lastDigit % 2 === 0) {
+              result += '-';
+            }
+          }
+        }
+
+        // Thêm số hiện tại vào kết quả
+        result += currentDigit;
+      }
+
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</body>
+</html>
