@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+
+<script>
+   function tinhGiaiThua(number) {
+       if (number ===0 || number === 1) {
+        return 1;
+       }else{
+        return number * tinhGiaiThua(number - 1);
+       }
+   }
+   var inputNumber = prompt("Nhập vào 1 số: ");
+   inputNumber = Number(inputNumber);
+   if (isNaN(inputNumber) || !Number.isInteger) {
+    alert("Bạn nhập vào 1 giá trị không hợp lệ");
+   }else if(inputNumber < 0){
+    alert("Bạn nhập vào 1 giá trị âm");
+   }else{
+    var result = tinhGiaiThua(inputNumber);
+    document.write("Giai thừa của " + inputNumber + " là " + result);
+   }
+</script>
+
+</body>
+</html>

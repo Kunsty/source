@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<script>
+    function minOf3Numbers() {
+  let num1 = parseInt(prompt("Nhập số thứ nhất:"));
+  let num2 = parseInt(prompt("Nhập số thứ hai:"));
+  let num3 = parseInt(prompt("Nhập số thứ ba:"));
+
+  if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+    console.log("Bạn đã nhập giá trị không hợp lệ!");
+    return;
+  }
+
+  let min = Math.min(num1, num2, num3);
+  
+  document.write("Số nhỏ nhất trong 3 số là: " + min);
+}
+</script>
+</body>
+</html>

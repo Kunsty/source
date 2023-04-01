@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+
+<script>
+    function isNumber(inputChar) {
+        if (/\d/.test(inputChar)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    var inputChar = prompt("Nhập vào 1 ký tự số ");
+    if(isNumber(inputChar)){
+        document.write("Ký tự " + inputChar + " là một số");
+    }else{
+        document.write("Ký tự " + inputChar + " không phải là một số");
+    }
+</script>
+
+</body>
+</html>

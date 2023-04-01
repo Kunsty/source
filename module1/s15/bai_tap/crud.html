@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+  </head>
+  <body>
+    <h1>Danh sách sản phẩm</h1>
+    <ul id="product-list">
+    </ul>
+    <h2>Thêm sản phẩm mới</h2>
+    <form id="add-product-form">
+      <input type="text" id="product-name" placeholder="Tên sản phẩm">
+      <button type="submit">Thêm</button>
+    </form>
+    <h2>Sửa tên sản phẩm</h2>
+    <form id="edit-product-form">
+      <select id="product-list-edit">
+      </select>
+      <input type="text" id="edit-name" placeholder="Tên mới của sản phẩm">
+      <button type="submit">Sửa</button>
+    </form>
+    <button id="delete-product">Xoá sản phẩm</button>
+  </body>
+</html>
+<script type="text/javascript">
+  let products = [];
+
+      function displayProducts() {
+        let productList = document.getElementById("product-list");
+        productList.innerHTML = "";
+        products.forEach(function(product) {
+          let li = document.createElement("li");
+          li.innerHTML = product.name;
+          productList.appendChild(li);
+        });
+      }
+
+      function addProduct(name) {
+        let product = {
+          name: name
+        };
+        products.push(product);
+      }
+
+      let addProductForm = document.getElementById("add-product-form");
+      addProductForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        let productNameInput = document.getElementById("product-name");
+        let productName = productNameInput.value;
+        addProduct(productName);
+        displayProducts();
+        productNameInput.value = "";
+      });
+
+      function editProduct(index, newName) {
+        products[index].name = newName;
+      }
+
+      let editProductForm = document.getElementById("edit-product-form");
+      let productListEdit = document.getElementById("product-list-edit");
+      editProductForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        let editNameInput = document.getElementById("edit-name");
+        let editName = editNameInput.value;
+        let selectedProductIndex = productListEdit.selectedIndex;
+        if (selectedProductIndex >= 0) {
+          let selectedProduct = products[selectedProductIndex];
+          editProduct(selectedProductIndex, editName);
+          displayProducts();
+          editNameInput.value = "";
+        }
+      });
+
+      function deleteProduct(index) {
+        products.splice(index, 1);
+      }
+
+      let deleteProductButton = document.getElementById("delete-product");
+      deleteProductButton.addEventListener("click", function() {
+        let selectedProductIndex = productList.selectedIndex;
+        if (selectedProductIndex >= 0) {
+          deleteProduct(selectedProductIndex);
+          displayProducts();
+        }
+      });
+
+      function populateProductList() {
+        let productList = document.getElementById("product-list");
+        productList.innerHTML = "";
+        products.forEach(function(product, index) {
+          let li = document.createElement("li");
+          li.innerHTML = product.name;
+          productList.appendChild(li);
+
+          let option = document.createElement("option");
+          option.innerHTML = product.name;
+          option.value = index;
+          productListEdit.appendChild(option);
+        });
+      }
+
+      populateProductList();
+</script>

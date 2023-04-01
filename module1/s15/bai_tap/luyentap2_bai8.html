@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<script>
+    function reverseArray(arr) {
+        var start = 0;
+        var end = arr.length - 1 ;
+        while(start < end){
+            var temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+        return arr;
+    }
+    var arr = [1, 2, 3, 4 ,5];
+    document.write("Hàm trước khi đảo ngược: ", arr, "<br>");
+    arr = reverseArray(arr);
+    document.write("Hàm sau khi đảo ngược: ", arr);
+</script>
+</body>
+</html>

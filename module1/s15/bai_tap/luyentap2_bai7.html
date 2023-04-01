@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<script>
+    function swapNumber(num1, num2) {
+        var temp = num1;
+        num1 = num2;
+        num2 = temp;
+        return[num1,num2];
+    }
+    var a = 10;
+    var b = 5;
+
+    document.write("Trước khi đổi chỗ a = " + a + " b = " + b + "<br>" );
+    [a, b] = swapNumber(a,b);
+    document.write("Sau khi đổi chỗ a = " + a + " b = " + b)
+</script>
+</body>
+</html>

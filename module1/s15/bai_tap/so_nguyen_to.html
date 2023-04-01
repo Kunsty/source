@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (var i = 2; i <= Math.sqrt(num); i++){
+            if(num % 2 === 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    document.write(isPrime(2) + "<br>");
+    document.write(isPrime(3) + "<br>");
+    document.write(isPrime(5) + "<br>");
+    document.write(isPrime(7) + "<br>");
+
+</script>
+</body>
+</html>

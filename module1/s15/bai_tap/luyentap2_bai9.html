@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<script>
+    function countChar(char, arr) {
+        var count = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] === char) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            return count;
+        }else{
+            return -1;
+        }
+    }
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    var char = 'c';
+    document.write(countChar(char, arr) + "<br>");
+    var char = 'f';
+    document.write(countChar(char, arr));
+</script>
+</body>
+</html>
